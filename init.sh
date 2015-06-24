@@ -25,7 +25,7 @@ appSetup () {
     rm -f /etc/samba/smb.conf
     rm -rf /var/lib/samba/private/*
     samba-tool domain provision --use-rfc2307 --domain=$SAMBA_DOMAIN --realm=$SAMBA_REALM --server-role=dc\
-      --dns-backend=BIND9_DLZ --adminpass=$SAMBA_ADMIN_PASSWORD $SAMBA_HOST_IP
+      --dns-backend=BIND9_DLZ --adminpass=$SAMBA_ADMIN_PASSWORD $SAMBA_HOST_IP 
     cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
     # Create Kerberos database
     expect kdb5_util_create.expect
